@@ -88,4 +88,7 @@ function setup_extensions() {
         --run "${FUNCTION_NAME}"
     done
   done
+
+  for COMMAND_NAME in "${!__COMMAND_EXTENSIONS[@]}"; do
+  done
 }
