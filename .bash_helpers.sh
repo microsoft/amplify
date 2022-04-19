@@ -78,6 +78,9 @@ function setup_extensions() {
       METHOD_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].METHOD_NAME")
 
       FUNCTION_NAME="$(echo ${COMMAND_NAME}_${SUB_COMMAND_NAME}_${ARGUMENT_NAME} | sed -e 's/[^a-zA-Z0-9_]//g' -e 's/ /_/g')"
+
+      copy_function "${METHOD_NAME}" ${FUNCTION_NAME}
+
     done
   done
 }
