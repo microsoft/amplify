@@ -44,4 +44,12 @@ function add_extension() {
 
   local key=${COMMAND_NAME}
   local value=${__COMMAND_EXTENSIONS[${key}]}
+
+  value="${value}$(cat <<EOF
+    if [[ "\${1}" == "${SUB_COMMAND_NAME}" && "\${2}" == "${ARGUMENT_NAME}" ]]; then
+      ${RUN} "\$@"
+      return 0;
+    fi
+EOF
+)"
 }
