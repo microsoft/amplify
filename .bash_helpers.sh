@@ -65,5 +65,6 @@ copy_function() {
 
 function setup_extensions() {
   for entry in ~/.extensions/*.sh do
+    source ${entry}
   done
 }
