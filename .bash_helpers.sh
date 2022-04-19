@@ -81,6 +81,11 @@ function setup_extensions() {
 
       copy_function "${METHOD_NAME}" ${FUNCTION_NAME}
 
+      add_extension \
+        --command-name "${COMMAND_NAME}" \
+        --sub-command-name "${SUB_COMMAND_NAME}" \
+        --argument-name "${ARGUMENT_NAME}" \
+        --run "${FUNCTION_NAME}"
     done
   done
 }
