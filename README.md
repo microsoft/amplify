@@ -26,6 +26,10 @@ Execute the following command to install ebc:
 curl -sL https://raw.githubusercontent.com/microsoft/extend-bash-commands/main/install.sh | bash
 ```
 
+## Usage
+
+There are multiple ways to use ebc
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
