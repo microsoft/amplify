@@ -11,3 +11,6 @@ if type gh > /dev/null 2>&1; then
 else
   git clone https://github.com/microsoft/extend-bash-commands.git ~/.ebc
 fi
+
+# make ebc persistent
+echo -e "\n\nsource ~/.ebc/.bash_helpers.sh\n\nsetup_extensions\n\n" >> ~/.bashrc
