@@ -90,5 +90,12 @@ function setup_extensions() {
   done
 
   for COMMAND_NAME in "${!__COMMAND_EXTENSIONS[@]}"; do
+    eval "$(cat <<EOF
+      function ${COMMAND_NAME}() {
+        ${__COMMAND_EXTENSIONS[${COMMAND_NAME}]}
+        command "${COMMAND_NAME}" "\${@}"
+      }
+EOF
+    )"
   done
 }
