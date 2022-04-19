@@ -73,6 +73,9 @@ function setup_extensions() {
     COMMAND_INFO_JSON=$(_get_extension_info_json)
 
     for (( i=0; i<$(echo "${COMMAND_INFO_JSON}" | jq ". | length"); i++ )); do
+      SUB_COMMAND_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].SUB_COMMAND_NAME")
+      ARGUMENT_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].ARGUMENT_NAME")
+      METHOD_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].METHOD_NAME")
     done
   done
 }
