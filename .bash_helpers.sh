@@ -68,5 +68,6 @@ function setup_extensions() {
     source ${entry}
 
     FILE_NAME=${entry##*/}
+    COMMAND_NAME="${FILE_NAME%.*}"
   done
 }
