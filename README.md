@@ -30,6 +30,22 @@ curl -sL https://raw.githubusercontent.com/microsoft/extend-bash-commands/main/i
 
 There are multiple ways to use ebc
 
+### Calling add_extension method
+
+You can call the `add_extension` method either by hand or programmatically;
+
+```bash
+add_extension \
+  --command-name "az" \
+  --sub-command-name "bicep" \
+  --argument-name "--help" \
+  --run "az_bicep_help"
+```
+
+ebc will add the `az bicep --help` to the `az` command if it's not exist, if it's exist, it'll shadow the existing command.
+
+When the command executed, it will call the `az_bicep_help` function.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
