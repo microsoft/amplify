@@ -41,4 +41,6 @@ function add_extension() {
   done
 
   set -- "${POSITIONAL_ARGS[@]}"
+
+  local key=${COMMAND_NAME}
 }
