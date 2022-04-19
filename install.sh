@@ -12,8 +12,8 @@ else
   git clone https://github.com/microsoft/amplify.git ~/.amplify
 fi
 
-# make ebc persistent
-echo -e "\n\nsource ~/.ebc/.bash_helpers.sh\n\nsetup_extensions\n\n" >> ~/.bashrc
+# make amplify persistent
+echo -e "\n\nsource ~/.amplify/.bash_helpers.sh\n\nsetup_extensions\n\n" >> ~/.bashrc
 
 # done
 echo $'\n########\ndone\n'
