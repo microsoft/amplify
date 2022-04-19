@@ -52,4 +52,6 @@ function add_extension() {
     fi
 EOF
 )"
+
+__COMMAND_EXTENSIONS["${key}"]="${value}"
 }
