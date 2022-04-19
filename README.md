@@ -60,6 +60,37 @@ In this scenario, ebc will create the `devops github --help` command and add it 
 
 When the command executed, it will call the `devops_github_help` function.
 
+### Creating a bash script in the ~/.extensions directory
+
+ebc will loop through all the sh files in the ~/.extensions directory and create commands for each of them.
+
+```bash
+# ~/.extensions/az.sh
+function _get_extension_info_json() {
+echo $(cat <<EOF
+[
+{
+  "SUB_COMMAND_NAME": "bicep",
+  "ARGUMENT_NAME": "--help",
+  "METHOD_NAME": "bicep_help"
+},
+{
+  "SUB_COMMAND_NAME": "bicep",
+  "ARGUMENT_NAME": "generate",
+  "METHOD_NAME": "bicep_generate"
+}
+]
+EOF
+)
+}
+bicep_help() {
+  echo "az bicep --help"
+}
+bicep_generate() {
+  echo "az bicep generate"
+}
+```
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
