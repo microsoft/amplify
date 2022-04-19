@@ -71,5 +71,8 @@ function setup_extensions() {
     COMMAND_NAME="${FILE_NAME%.*}"
 
     COMMAND_INFO_JSON=$(_get_extension_info_json)
+
+    for (( i=0; i<$(echo "${COMMAND_INFO_JSON}" | jq ". | length"); i++ )); do
+    done
   done
 }
