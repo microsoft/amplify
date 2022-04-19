@@ -2,6 +2,18 @@
 
 Helper functions to extend any command in bash
 
+## Problem
+
+If you want a command or a tool in bash has a certain functionality, your options are;
+
+- Create a feature request to the owner or maintainer of the tool
+- Develop the functionality yourself and submit a pull request
+- Use another tool that has the functionality
+
+Unfortunately, none of these options are always the best option
+
+It'd be best if we could add the functionality to the command on ourselves.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
