@@ -14,3 +14,6 @@ fi
 
 # make ebc persistent
 echo -e "\n\nsource ~/.ebc/.bash_helpers.sh\n\nsetup_extensions\n\n" >> ~/.bashrc
+
+# done
+echo $'\n########\ndone\n'
