@@ -43,4 +43,5 @@ function add_extension() {
   set -- "${POSITIONAL_ARGS[@]}"
 
   local key=${COMMAND_NAME}
+  local value=${__COMMAND_EXTENSIONS[${key}]}
 }
