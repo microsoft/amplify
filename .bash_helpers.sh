@@ -64,38 +64,40 @@ copy_function() {
 }
 
 function setup_extensions() {
-  for entry in ~/.extensions/*.sh; do
-    source ${entry}
+  if [[ -d ~/.extensions ]]; then
+    for entry in ~/.extensions/*.sh; do
+      source ${entry}
 
-    FILE_NAME=${entry##*/}
-    COMMAND_NAME="${FILE_NAME%.*}"
+      FILE_NAME=${entry##*/}
+      COMMAND_NAME="${FILE_NAME%.*}"
 
-    COMMAND_INFO_JSON=$(_get_extension_info_json)
+      COMMAND_INFO_JSON=$(_get_extension_info_json)
 
-    for (( i=0; i<$(echo "${COMMAND_INFO_JSON}" | jq ". | length"); i++ )); do
-      SUB_COMMAND_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].SUB_COMMAND_NAME")
-      ARGUMENT_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].ARGUMENT_NAME")
-      METHOD_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].METHOD_NAME")
+      for (( i=0; i<$(echo "${COMMAND_INFO_JSON}" | jq ". | length"); i++ )); do
+        SUB_COMMAND_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].SUB_COMMAND_NAME")
+        ARGUMENT_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].ARGUMENT_NAME")
+        METHOD_NAME=$(echo "${COMMAND_INFO_JSON}" | jq -r ".[${i}].METHOD_NAME")
 
-      FUNCTION_NAME="$(echo ${COMMAND_NAME}_${SUB_COMMAND_NAME}_${ARGUMENT_NAME} | sed -e 's/[^a-zA-Z0-9_]//g' -e 's/ /_/g')"
+        FUNCTION_NAME="$(echo ${COMMAND_NAME}_${SUB_COMMAND_NAME}_${ARGUMENT_NAME} | sed -e 's/[^a-zA-Z0-9_]//g' -e 's/ /_/g')"
 
-      copy_function "${METHOD_NAME}" ${FUNCTION_NAME}
+        copy_function "${METHOD_NAME}" ${FUNCTION_NAME}
 
-      add_extension \
-        --command-name "${COMMAND_NAME}" \
-        --sub-command-name "${SUB_COMMAND_NAME}" \
-        --argument-name "${ARGUMENT_NAME}" \
-        --run "${FUNCTION_NAME}"
+        add_extension \
+          --command-name "${COMMAND_NAME}" \
+          --sub-command-name "${SUB_COMMAND_NAME}" \
+          --argument-name "${ARGUMENT_NAME}" \
+          --run "${FUNCTION_NAME}"
+      done
     done
-  done
 
-  for COMMAND_NAME in "${!__COMMAND_EXTENSIONS[@]}"; do
-    eval "$(cat <<EOF
-      function ${COMMAND_NAME}() {
-        ${__COMMAND_EXTENSIONS[${COMMAND_NAME}]}
-        command "${COMMAND_NAME}" "\${@}"
-      }
-EOF
-    )"
-  done
+    for COMMAND_NAME in "${!__COMMAND_EXTENSIONS[@]}"; do
+      eval "$(cat <<EOF
+        function ${COMMAND_NAME}() {
+          ${__COMMAND_EXTENSIONS[${COMMAND_NAME}]}
+          command "${COMMAND_NAME}" "\${@}"
+        }
+  EOF
+      )"
+    done
+  fi
 }
