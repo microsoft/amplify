@@ -69,5 +69,7 @@ function setup_extensions() {
 
     FILE_NAME=${entry##*/}
     COMMAND_NAME="${FILE_NAME%.*}"
+
+    COMMAND_INFO_JSON=$(_get_extension_info_json)
   done
 }
