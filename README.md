@@ -18,6 +18,14 @@ It'd be best if we could add the functionality to the command on ourselves.
 
 ebc is a lightweight utility/framework that adds functionality to any command in bash. This allows you to add new functionality, extend existing functionality or create commands that just didn't exist before. ebc is written in bash and is distributed under the open source MIT License.
 
+## Installation
+
+Execute the following command to install ebc:
+
+```bash
+curl -sL https://raw.githubusercontent.com/microsoft/extend-bash-commands/main/install.sh | bash
+```
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
