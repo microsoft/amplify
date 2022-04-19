@@ -1,4 +1,4 @@
-# Extending Bash Commands
+# Amplify
 
 Helper functions to extend any command in bash
 
