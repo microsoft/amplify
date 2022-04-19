@@ -14,6 +14,10 @@ Unfortunately, none of these options are always the best option
 
 It'd be best if we could add the functionality to the command on ourselves.
 
+## Solution
+
+ebc is a lightweight utility/framework that adds functionality to any command in bash. This allows you to add new functionality, extend existing functionality or create commands that just didn't exist before. ebc is written in bash and is distributed under the open source MIT License.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
