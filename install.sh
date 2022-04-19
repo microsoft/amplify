@@ -7,9 +7,9 @@ set -e
 echo $'\n########\nclone dotfiles repo\n'
 
 if type gh > /dev/null 2>&1; then
-  gh repo clone microsoft/extend-bash-commands ~/.ebc
+  gh repo clone microsoft/amplify ~/.amplify
 else
-  git clone https://github.com/microsoft/extend-bash-commands.git ~/.ebc
+  git clone https://github.com/microsoft/amplify.git ~/.amplify
 fi
 
 # make ebc persistent
