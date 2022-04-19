@@ -46,6 +46,20 @@ ebc will add the `az bicep --help` to the `az` command if it's not exist, if it'
 
 When the command executed, it will call the `az_bicep_help` function.
 
+You can also add completely new command to the bash shell;
+
+```bash
+add_extension \
+  --command-name "devops" \
+  --sub-command-name "github" \
+  --argument-name "--help" \
+  --run "devops_github_help"
+```
+
+In this scenario, ebc will create the `devops github --help` command and add it to the bash shell.
+
+When the command executed, it will call the `devops_github_help` function.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
