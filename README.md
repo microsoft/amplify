@@ -42,7 +42,7 @@ add_extension \
   --run "az_bicep_help"
 ```
 
-ebc will add the `az bicep --help` to the `az` command if it's not exist, if it's exist, it'll shadow the existing command.
+amplify will add the `az bicep --help` to the `az` command if it's not exist, if it's exist, it'll shadow the existing command.
 
 When the command executed, it will call the `az_bicep_help` function.
 
@@ -56,13 +56,13 @@ add_extension \
   --run "devops_github_help"
 ```
 
-In this scenario, ebc will create the `devops github --help` command and add it to the bash shell.
+In this scenario, amplify will create the `devops github --help` command and add it to the bash shell.
 
 When the command executed, it will call the `devops_github_help` function.
 
 ### Creating a bash script in the ~/.extensions directory
 
-ebc will loop through all the sh files in the ~/.extensions directory and create commands for each of them.
+Amplify will loop through all the sh files in the ~/.extensions directory and create commands for each of them.
 
 ```bash
 # ~/.extensions/az.sh
