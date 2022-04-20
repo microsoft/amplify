@@ -89,6 +89,7 @@ function setup_extensions() {
           --run "${FUNCTION_NAME}"
       done
     done
+  fi
 
   if [[ -d ~/.amplify/extensions ]]; then
     for entry in ~/.amplify/extensions/*.sh; do
@@ -115,6 +116,7 @@ function setup_extensions() {
           --run "${FUNCTION_NAME}"
       done
     done
+  fi
 
     for COMMAND_NAME in "${!__COMMAND_EXTENSIONS[@]}"; do
       eval "$(cat <<EOF
@@ -125,5 +127,4 @@ function setup_extensions() {
 EOF
       )"
     done
-  fi
 }
