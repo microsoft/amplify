@@ -16,7 +16,7 @@ It'd be best if we could add the functionality to the command on ourselves.
 
 ## Solution
 
-ebc is a lightweight utility/framework that adds functionality to any command in bash. This allows you to add new functionality, extend existing functionality or create commands that just didn't exist before. ebc is written in bash and is distributed under the open source MIT License.
+Amplify is a lightweight utility/framework that adds functionality to any command in bash. This allows you to add new functionality, extend existing functionality or create commands that just didn't exist before. Amplify is written in bash and is distributed under the open source MIT License.
 
 ## Installation
 
