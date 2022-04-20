@@ -20,7 +20,7 @@ Amplify is a lightweight utility/framework that adds functionality to any comman
 
 ## Installation
 
-Execute the following command to install ebc:
+Execute the following command to install amplify:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/microsoft/amplify/main/install.sh | bash
@@ -28,7 +28,7 @@ curl -sL https://raw.githubusercontent.com/microsoft/amplify/main/install.sh | b
 
 ## Usage
 
-There are multiple ways to use ebc
+There are multiple ways to use amplify
 
 ### Calling add_extension method
 
