@@ -122,7 +122,7 @@ function setup_extensions() {
           ${__COMMAND_EXTENSIONS[${COMMAND_NAME}]}
           command "${COMMAND_NAME}" "\${@}"
         }
-  EOF
+EOF
       )"
     done
   fi
