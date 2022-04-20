@@ -13,7 +13,7 @@ else
 fi
 
 # make amplify persistent
-echo -e "\n\nsource ~/.amplify/.bash_helpers.sh\n\nsetup_extensions\n\n" >> ~/.bashrc
+echo -e "\nsource ~/.amplify/.bash_helpers.sh\n\nsetup_extensions\n" >> ~/.bashrc
 
 # done
 echo $'\n########\ndone\n'
